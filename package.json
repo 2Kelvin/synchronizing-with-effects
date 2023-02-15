@@ -1,0 +1,17 @@
+{
+  "name": "synchronizing-with-effects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babelwatcher": "babel --watch src --out-dir dist --presets babel-preset-react-app/prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.20.7",
+    "babel-preset-react-app": "^10.0.1"
+  }
+}
