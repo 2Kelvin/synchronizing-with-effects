@@ -22,3 +22,6 @@ In this read, I learnt:
 - `a useEffect WITH A LIST/ ONE dependency in its dependency array runs when the component first appears/renders and when (any of) the array dependencies/ dependency changes`
 - `a ref is not included in a dependency array because it'll always return the same DOM node object on every render, it doesn't change therrefore will never cause a rerender on the parent component or useEffect itself.` This is called having a `stable identity`. However if a ref was passed from the parent component, you would have to include it in the dependency array if you don't know if the parent is passing the same ref or is passing one of several refs conditionally. Therefore, your Effect would depend on which ref is being passed.
 - `useState's set functions are also ommitted as dependencies since they also have a stable identity`
+- an effect cleanup is achieved by **returning a function that undoes the function running in useEffect once the component is disconnected**
+- component remounting only happens in react's development mode to help find bugs in your code. This is achieved through strict mode. In react's production mode, remounting doesn't occur, the component only mounts once (after they are rendered).
+- basically, `a cleanup function should stop/ undo whatever useEffect was doing`
