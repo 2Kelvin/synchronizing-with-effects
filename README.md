@@ -1,5 +1,7 @@
 # synchronizing-with-effects
 
+![useEffect](https://user-images.githubusercontent.com/85868026/219851028-eb6a8ff7-ba19-4241-9173-4559cf83554e.jpg)
+
 In this read, I learnt:
 
 - **effects let you run some code logic right after react renders** in order to synchronize your component with a system outside of react e.g. a network, a browser API etc
