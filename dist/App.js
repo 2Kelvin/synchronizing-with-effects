@@ -12,7 +12,7 @@ function VideoPlayer(_ref) {
   var vidRef = React.useRef(null);
   React.useEffect(function () {
     isPlaying ? vidRef.current.play() : vidRef.current.pause();
-  });
+  }, [isPlaying]);
   return /*#__PURE__*/React.createElement("video", {
     className: "rounded-md",
     ref: vidRef,

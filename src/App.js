@@ -3,7 +3,7 @@ function VideoPlayer({ src, isPlaying }) {
 
   React.useEffect(() => {
     isPlaying ? vidRef.current.play() : vidRef.current.pause();
-  });
+  }, [isPlaying]);
 
   return (
     <video className="rounded-md" ref={vidRef} src={src} loop playsInline />
