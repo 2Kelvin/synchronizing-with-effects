@@ -25,3 +25,10 @@ In this read, I learnt:
 - an effect cleanup is achieved by **returning a function that undoes the function running in useEffect once the component is disconnected**
 - component remounting only happens in react's development mode to help find bugs in your code. This is achieved through strict mode. In react's production mode, remounting doesn't occur, the component only mounts once (after they are rendered).
 - basically, `a cleanup function should stop/ undo whatever useEffect was doing`
+- common cases to use Effects (useEffect):
+  - [x] Controlling non-react widgets/elements/components
+  - [x] Subscribing to/ using events. for every event the Effect subscribes to, the cleanup function should make sure to unsubscribe
+  - [x] Triggering animations. The cleanup function should make sure to reset all animations the Effect uses
+  - [x] Fetching data. The cleanup function should make sure to either abort the fetch or ignore the result
+  - [x] Sending analytics
+  - [x] When starting an application e.g. loading data from localStorage
