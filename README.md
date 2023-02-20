@@ -37,3 +37,4 @@ In this read, I learnt:
   - [x] **useEffect is just a way of attaching behavior to react rendering**
   - [x] **in development mode, react mounts your component twice to see if it has a correctly working clean up function. This helps you track and reduce bugs since in production, the component is only mounted once**
   - [x] **the clean up function cleans up the previous Effect once a useEffect changes and also wipes out the Effect after a component unmounts**
+- a `race condition` is when two asychronomous operations race/ compete with each other which might lead them to arriving in an unexpected order.
