@@ -37,4 +37,23 @@ In this read, I learnt:
   - [x] **useEffect is just a way of attaching behavior to react rendering**
   - [x] **in development mode, react mounts your component twice to see if it has a correctly working clean up function. This helps you track and reduce bugs since in production, the component is only mounted once**
   - [x] **the clean up function cleans up the previous Effect once a useEffect changes and also wipes out the Effect after a component unmounts**
-- a `race condition` is when two asychronomous operations race/ compete with each other which might lead them to arriving in an unexpected order.
+- a `race condition` is when two asychronomous operations race/ compete with each other which might lead them to arriving in an unexpected order. To fix this, implement a boolean variable to check which responses to ignore and undo it in the cleanup function. Basically, to fix race conditions, **use a clean up function.** This will baically mean that **all other responses will be ignored except for the last one** (this is very helpful in apps that use a search input to search data like google)
+
+```
+useEffect(() => {
+  let ignore = false;
+
+  async function startFetching() {
+    const json = await fetchTodos(userId);
+    if (!ignore) {
+      setTodos(json);
+    }
+  }
+
+  startFetching();
+
+  return () => {
+    ignore = true;
+  };
+}, [userId]);
+```
